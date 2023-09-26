@@ -41,17 +41,17 @@ The styling mechanism consists of the following files (all paths are prefixed wi
   _CustomStyles.astro_ component, described above, is injected into the html header.
 </DListItem>
 
-### Dark Mode
+### Light Mode
 
-_Dark Mode_ is triggered by the little 'sunlight' icon:<ToggleTheme/>in the page header. It is defined in the _components/common/ToggleTheme.astro_, but the event is attached and the action defined in _components/common/BasicScripts.astro_ in the following snippet:
+_Light Mode_ is triggered by the little 'sunlight' icon:<ToggleTheme/>in the page header. It is defined in the _components/common/ToggleTheme.astro_, but the event is attached and the action defined in _components/common/BasicScripts.astro_ in the following snippet:
 
 ```javascript
 attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
   if (defaultTheme.endsWith(':only')) {
     return;
   }
-  document.documentElement.classList.toggle('dark');
-  localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  document.documentElement.classList.toggle('light');
+  localStorage.theme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
 });
 ```
 
@@ -142,7 +142,7 @@ You'll note that the index file imports a lot of components, each one roughly an
 ```astro
 <CallToAction
   callToAction={{
-    text: 'Get template',
+    text: 'Learn More',
     href: 'https://github.com/onwidget/astrowind',
     icon: 'tabler:download',
   }}
